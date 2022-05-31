@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamsoft Code Parser Sample - Hello World (Parsing via Camera)</title>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@9.0.2/dist/dbr.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-codeparser@1.0.0/dist/dcp.js"></script>
+</head>
+<body>
+  <div>Loading...</div>
+  <script>
+    /** LICENSE ALERT - README 
+      * To use the library, you need to first specify a license key using the API "license" as shown below.
+    */
+    Dynamsoft.DBR.BarcodeReader.license = "f0073tgAAALmBpNnuj78KEox8RvJVXtJbhMFK0zNrK73WpdpaLg7thjQ+nUe5YOCdw771F1U9rBghCCJh/5EFsGpMImT9qxYA8O8nIg==";
+    Dynamsoft.DCP.CodeParser.license = "t0068lQAAALYEhtEBvMXXW/PQNyEwn0zwxU2eDrsWWkyVFnHbiQlE6VXULCiJA5B7kAYMJRlKL5N94Wi7R62CEiCgJnJsfNc=";
+    /** 
+      * You can visit https://www.dynamsoft.com/customer/license/trialLicense?utm_source=github&product=dbr&package=js to get your own trial license good for 30 days. 
+      * Note that if you downloaded this sample from Dynamsoft while logged in, the above license key may already be your own 30-day trial license.
+      * For more information, see https://www.dynamsoft.com/barcode-reader/programming/javascript/user-guide/?ver=9.0.2&utm_source=github#specify-the-license or contact support@dynamsoft.com.
+      * LICENSE ALERT - THE END 
+    */
+    (async() => {
+      try {
+        // Create a DBR instance and set it to decode only PDF417
+        const scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
+        const settings = await scanner.getRuntimeSettings();
+        settings.barcodeFormatIds = Dynamsoft.DBR.EnumBarcodeFormat.BF_PDF417;
+        await scanner.updateRuntimeSettings(settings);
+        // Create a DCP instance
+        const parser = await Dynamsoft.DCP.CodeParser.createInstance();
+        
+        // Set the parsing format
+        await parser.setCodeFormat(Dynamsoft.DCP.EnumCodeFormat.CF_DL_AAMVA_ANSI);
+
+        scanner.onUniqueRead = async (txt, result) => {
+          // Data is parsed through DCP
+          const info = await parser.parseData(result.barcodeBytes);
+          alert(JSON.stringify(info));
+          console.log(info);
+        }
+
+        await scanner.show();
+        
+      } catch(ex) {
+        alert(ex);
+      }
+    })();
+  </script>
+</body>
+</html>
