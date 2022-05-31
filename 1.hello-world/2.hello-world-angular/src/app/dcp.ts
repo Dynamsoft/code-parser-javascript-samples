@@ -1,4 +1,4 @@
-import { CodeParser } from 'shen-dynamsoft-code-parser';
+import { CodeParser } from 'dynamsoft-javascript-codeparser';
 
 /** LICENSE ALERT - README
  * To use the library, you need to first specify a license key using the API "license" as shown below.
@@ -7,9 +7,8 @@ import { CodeParser } from 'shen-dynamsoft-code-parser';
  CodeParser.license = 't0068lQAAALYEhtEBvMXXW/PQNyEwn0zwxU2eDrsWWkyVFnHbiQlE6VXULCiJA5B7kAYMJRlKL5N94Wi7R62CEiCgJnJsfNc=';
 
 /**
- * You can visit https://www.dynamsoft.com/customer/license/trialLicense?utm_source=github&product=dbr&package=js to get your own trial license good for 30 days.
- * Note that if you downloaded this sample from Dynamsoft while logged in, the above license key may already be your own 30-day trial license.
+ * You can contact us to get a DCP license via [email](mailto:support@dynamsoft.com) or [live chat](https://www.dynamsoft.com/barcode-reader/overview/) via the "Let's Chat" button.
  * LICENSE ALERT - THE END
  */
 
- CodeParser.engineResourcePath = 'https://cdn.jsdelivr.net/npm/shen-dynamsoft-code-parser@0.20220517142536.0/dist/';
+ CodeParser.engineResourcePath = 'https://cdn.jsdelivr.net/npm/dynamsoft-javascript-codeparser@1.0.0/dist/';
