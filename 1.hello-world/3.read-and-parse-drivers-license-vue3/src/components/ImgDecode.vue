@@ -21,7 +21,7 @@ export default {
         await reader.updateRuntimeSettings(settings);
 
         const parser = await (pParser.value = pParser.value || CodeParser.createInstance());
-        await parser.setCodeFormat(EnumCodeFormat.CF_DL_AAMVA_ANSI);
+        await parser.setCodeFormat(EnumCodeFormat.CF_AUTO);
 
         let results = await reader.decode(e.target.files[0]);
 

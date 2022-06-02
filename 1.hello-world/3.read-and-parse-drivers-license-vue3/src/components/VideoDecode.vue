@@ -101,13 +101,7 @@ export default {
         await scanner.setUIElement(elRefs.value);
 
         const parser = await (pParser.value = CodeParser.createInstance());
-        await parser.setCodeFormat(EnumCodeFormat.CF_DL_AAMVA_ANSI);
-
-        /* scanner.onFrameRead = (results) => {
-          for (let result of results) {
-            console.log(result.barcodeText);
-          }
-        }; */
+        await parser.setCodeFormat(EnumCodeFormat.CF_AUTO);
 
         scanner.onUniqueRead = async (txt, result) => {
           const info = await parser.parseData(result.barcodeBytes);

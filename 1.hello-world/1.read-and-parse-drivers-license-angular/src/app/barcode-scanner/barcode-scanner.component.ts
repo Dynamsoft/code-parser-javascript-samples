@@ -20,13 +20,7 @@ export class VideoDecodeComponent implements OnInit {
       await scanner.setUIElement((document.querySelector('.component-barcode-scanner') as any));
 
       const parser = await (this.pParser = CodeParser.createInstance());
-      parser.setCodeFormat(EnumCodeFormat.CF_DL_AAMVA_ANSI);
-
-      /* scanner.onFrameRead = (results: any) => {
-        for (const result of results) {
-          console.log(result);
-        }
-      }; */
+      parser.setCodeFormat(EnumCodeFormat.CF_AUTO);
 
       scanner.onUniqueRead = async (txt: string, result: any) => {
         const info = await parser.parseData(result.barcodeBytes);

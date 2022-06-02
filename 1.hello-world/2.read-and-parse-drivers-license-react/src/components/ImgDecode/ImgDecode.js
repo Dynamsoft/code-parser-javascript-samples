@@ -19,7 +19,7 @@ export default class ImgDecode extends Component {
       await reader.updateRuntimeSettings(settings);
 
       const parser = await (this.pParser = this.pParser || CodeParser.createInstance());
-      await parser.setCodeFormat(EnumCodeFormat.CF_DL_AAMVA_ANSI);
+      await parser.setCodeFormat(EnumCodeFormat.CF_AUTO);
 
       let results = await reader.decode(e.target.files[0]);
 

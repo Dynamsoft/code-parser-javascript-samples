@@ -12,4 +12,4 @@ import { CodeParser } from 'shen-dynamsoft-code-parser';
  * LICENSE ALERT - THE END
  */
 
- CodeParser.engineResourcePath = 'https://cdn.jsdelivr.net/npm/shen-dynamsoft-code-parser@0.20220517142536.0/dist/';
+ CodeParser.engineResourcePath = 'https://cdn.jsdelivr.net/npm/shen-dynamsoft-code-parser@0.20220602135404.0/dist/';
