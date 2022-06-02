@@ -15,6 +15,7 @@ export class VideoDecodeComponent implements OnInit {
       const scanner = await (this.pScanner = BarcodeScanner.createInstance());
       const settings = await scanner.getRuntimeSettings();
       settings.barcodeFormatIds = EnumBarcodeFormat.BF_PDF417;
+      settings.deblurLevel = 7;
       await scanner.updateRuntimeSettings(settings);
       await scanner.setUIElement((document.querySelector('.component-barcode-scanner') as any));
 

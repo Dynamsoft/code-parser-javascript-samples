@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BarcodeReader, EnumBarcodeFormat } from "dynamsoft-javascript-barcode";
-import { CodeParser, EnumCodeFormat } from 'dynamsoft-javascript-codeparser';
+import { CodeParser, EnumCodeFormat } from 'shen-dynamsoft-code-parser';
 import './ImgDecode.css'
 
 export default class ImgDecode extends Component {
@@ -15,6 +15,7 @@ export default class ImgDecode extends Component {
       const reader = await (this.pReader = this.pReader || BarcodeReader.createInstance());
       const settings = await reader.getRuntimeSettings();
       settings.barcodeFormatIds = EnumBarcodeFormat.BF_PDF417;
+      settings.deblurLevel = 7;
       await reader.updateRuntimeSettings(settings);
 
       const parser = await (this.pParser = this.pParser || CodeParser.createInstance());

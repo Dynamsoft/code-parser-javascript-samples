@@ -3,7 +3,7 @@ import reactLogo from '../../logo.svg';
 import "../../dbr"; // import side effects. The license, engineResourcePath, so on.
 import "../../dcp"; // import side effects. The license, engineResourcePath, so on.
 import { BarcodeReader } from "dynamsoft-javascript-barcode";
-import { CodeParser } from "dynamsoft-javascript-codeparser";
+import { CodeParser } from "shen-dynamsoft-code-parser";
 import React from 'react';
 import VideoDecode from '../VideoDecode/VideoDecode';
 import ImgDecode from '../ImgDecode/ImgDecode';

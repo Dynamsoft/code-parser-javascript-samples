@@ -5,7 +5,7 @@
 <script>
 import { onBeforeUnmount, ref } from "vue";
 import { BarcodeReader, EnumBarcodeFormat } from 'dynamsoft-javascript-barcode';
-import { CodeParser, EnumCodeFormat } from 'dynamsoft-javascript-codeparser';
+import { CodeParser, EnumCodeFormat } from 'shen-dynamsoft-code-parser';
 
 export default {
   setup() {
@@ -17,6 +17,7 @@ export default {
         const reader = await (pReader.value = pReader.value || BarcodeReader.createInstance());
         const settings = await reader.getRuntimeSettings();
         settings.barcodeFormatIds = EnumBarcodeFormat.BF_PDF417;
+        settings.deblurLevel = 7;
         await reader.updateRuntimeSettings(settings);
 
         const parser = await (pParser.value = pParser.value || CodeParser.createInstance());
