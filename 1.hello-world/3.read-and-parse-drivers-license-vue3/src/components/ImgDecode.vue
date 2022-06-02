@@ -17,7 +17,6 @@ export default {
         const reader = await (pReader.value = pReader.value || BarcodeReader.createInstance());
         const settings = await reader.getRuntimeSettings();
         settings.barcodeFormatIds = EnumBarcodeFormat.BF_PDF417;
-        settings.deblurLevel = 7;
         await reader.updateRuntimeSettings(settings);
 
         const parser = await (pParser.value = pParser.value || CodeParser.createInstance());

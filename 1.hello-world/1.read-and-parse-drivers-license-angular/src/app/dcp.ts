@@ -7,8 +7,7 @@ import { CodeParser } from 'shen-dynamsoft-code-parser';
  CodeParser.license = 't0068lQAAALYEhtEBvMXXW/PQNyEwn0zwxU2eDrsWWkyVFnHbiQlE6VXULCiJA5B7kAYMJRlKL5N94Wi7R62CEiCgJnJsfNc=';
 
 /**
- * You can visit https://www.dynamsoft.com/customer/license/trialLicense?utm_source=github&product=dbr&package=js to get your own trial license good for 30 days.
- * Note that if you downloaded this sample from Dynamsoft while logged in, the above license key may already be your own 30-day trial license.
+ * You can contact Dynamsoft Support Team (https://www.dynamsoft.com/Company/Contact.aspx) to obtain a license.
  * LICENSE ALERT - THE END
  */
 

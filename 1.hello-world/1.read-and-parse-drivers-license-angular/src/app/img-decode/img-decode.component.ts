@@ -18,7 +18,6 @@ export class ImgDecodeComponent implements OnInit {
       const reader = await (this.pReader = this.pReader || BarcodeReader.createInstance());
       const settings = await reader.getRuntimeSettings();
       settings.barcodeFormatIds = EnumBarcodeFormat.BF_PDF417;
-      settings.deblurLevel = 7;
       await reader.updateRuntimeSettings(settings);
 
       const parser = await(this.pParser = this.pParser || CodeParser.createInstance());
