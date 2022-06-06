@@ -5,8 +5,8 @@ import "../../dcp"; // import side effects. The license, engineResourcePath, so 
 import { BarcodeReader } from "dynamsoft-javascript-barcode";
 import { CodeParser } from "shen-dynamsoft-code-parser";
 import React from 'react';
-import VideoDecode from '../VideoDecode/VideoDecode';
-import ImgDecode from '../ImgDecode/ImgDecode';
+import VideoParser from '../VideoParser/VideoParser';
+import ImgParser from '../ImgParser/ImgParser';
 
 class HelloWorld extends React.Component {
     constructor(props) {
@@ -49,8 +49,8 @@ class HelloWorld extends React.Component {
                     <button style={{backgroundColor: this.state.bShowImgDecode ? 'rgb(255,174,55)' : 'white'}} onClick={this.showImgDecode}>Image Decode</button>
                 </div>
                 <div className="container">
-                    {this.state.bShowScanner ? (<VideoDecode></VideoDecode>) : ""}
-                    {this.state.bShowImgDecode ? (<ImgDecode></ImgDecode>) : ""}
+                    {this.state.bShowScanner ? (<VideoParser></VideoParser>) : ""}
+                    {this.state.bShowImgDecode ? (<ImgParser></ImgParser>) : ""}
                 </div>
             </div>
         );

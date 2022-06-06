@@ -1,7 +1,7 @@
 import { BarcodeScanner, EnumBarcodeFormat } from "dynamsoft-javascript-barcode";
 import { CodeParser, EnumCodeFormat } from 'shen-dynamsoft-code-parser';
 import React from 'react';
-import './VideoDecode.css'
+import './VideoParser.css'
 
 class VideoDecode extends React.Component {
     constructor(props) {
@@ -36,7 +36,7 @@ class VideoDecode extends React.Component {
         if (this.pScanner) {
             (await this.pScanner).destroyContext();
             (await this.pParser).destroyContext();
-            console.log('BarcodeScanner Component Unmount');
+            console.log('VideoParser Component Unmount');
         }
     }
     shouldComponentUpdate(){

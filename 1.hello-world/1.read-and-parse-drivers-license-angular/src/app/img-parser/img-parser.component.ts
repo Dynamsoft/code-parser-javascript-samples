@@ -3,11 +3,11 @@ import {BarcodeReader, EnumBarcodeFormat} from 'dynamsoft-javascript-barcode';
 import { CodeParser, EnumCodeFormat } from 'shen-dynamsoft-code-parser';
 
 @Component({
-  selector: 'app-img-decode',
-  templateUrl: './img-decode.component.html',
-  styleUrls: ['./img-decode.component.css']
+  selector: 'app-img-parser',
+  templateUrl: './img-parser.component.html',
+  styleUrls: ['./img-parser.component.css']
 })
-export class ImgDecodeComponent implements OnInit {
+export class ImgParserComponent implements OnInit {
   pReader = null;
   pParser = null;
 
@@ -42,7 +42,7 @@ export class ImgDecodeComponent implements OnInit {
     if (this.pReader) {
       (await this.pReader).destroyContext();
       (await this.pParser).destroyContext();
-      console.log('ImgDecode Component Unmount');
+      console.log('ImgParser Component Unmount');
     }
   }
 }

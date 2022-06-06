@@ -118,7 +118,7 @@ export default {
       if (pScanner.value) {
         (await pScanner.value).destroyContext();
         (await pParser.value).destroyContext();
-        console.log('BarcodeScanner Component Unmount');
+        console.log('VideoParser Component Unmount');
       }
     });
     return {

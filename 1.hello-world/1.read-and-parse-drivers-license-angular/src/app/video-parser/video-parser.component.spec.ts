@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImgDecodeComponent } from './img-decode.component';
+import { VideoParserComponent } from './video-parser.component';
 
-describe('HelloWorldComponent', () => {
-  let component: ImgDecodeComponent;
-  let fixture: ComponentFixture<ImgDecodeComponent>;
+describe('BarcodeScannerComponent', () => {
+  let component: VideoParserComponent;
+  let fixture: ComponentFixture<VideoParserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ImgDecodeComponent ]
+      declarations: [ VideoParserComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ImgDecodeComponent);
+    fixture = TestBed.createComponent(VideoParserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner, EnumBarcodeFormat } from 'dynamsoft-javascript-barcode'
 import { CodeParser, EnumCodeFormat } from 'shen-dynamsoft-code-parser'
 @Component({
-  selector: 'app-video-decode',
-  templateUrl: './barcode-scanner.component.html',
-  styleUrls: ['./barcode-scanner.component.css']
+  selector: 'app-video-parser',
+  templateUrl: './video-parser.component.html',
+  styleUrls: ['./video-parser.component.css']
 })
-export class VideoDecodeComponent implements OnInit {
+export class VideoParserComponent implements OnInit {
   pScanner = null;
   pParser = null;
 
@@ -17,7 +17,7 @@ export class VideoDecodeComponent implements OnInit {
       settings.barcodeFormatIds = EnumBarcodeFormat.BF_PDF417;
       settings.deblurLevel = 7;
       await scanner.updateRuntimeSettings(settings);
-      await scanner.setUIElement((document.querySelector('.component-barcode-scanner') as any));
+      await scanner.setUIElement((document.querySelector('.component-video-parser') as any));
 
       const parser = await (this.pParser = CodeParser.createInstance());
       parser.setCodeFormat(EnumCodeFormat.CF_AUTO);
@@ -36,7 +36,7 @@ export class VideoDecodeComponent implements OnInit {
     if (this.pScanner) {
       (await this.pScanner).destroyContext();
       (await this.pParser).destroyContext();
-      console.log('BarcodeScanner Component Unmount');
+      console.log('VideoParser Component Unmount');
     }
   }
 }

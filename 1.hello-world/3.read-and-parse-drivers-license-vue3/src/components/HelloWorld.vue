@@ -6,8 +6,8 @@
         <button :style="{backgroundColor: bShowImgDecode ? 'rgb(255,174,55)' : 'white'}"  @click="showImgDecode">Image Decode</button>
     </div>
     <div class="container">
-      <VideoDecode v-if="bShowScanner"></VideoDecode>
-      <ImgDecode v-if="bShowImgDecode"></ImgDecode>
+      <VideoParser v-if="bShowScanner"></VideoParser>
+      <ImgParser v-if="bShowImgDecode"></ImgParser>
     </div>
   </div>
 </template>
@@ -17,8 +17,8 @@ import "../dbr"; // import side effects. The license, engineResourcePath, so on.
 import "../dcp"; // import side effects. The license, engineResourcePath, so on.
 import { BarcodeScanner } from 'dynamsoft-javascript-barcode';
 import { CodeParser } from 'shen-dynamsoft-code-parser';
-import VideoDecode from "./VideoDecode";
-import ImgDecode from './ImgDecode'
+import VideoParser from "./VideoParser";
+import ImgParser from './ImgParser'
 import { ref, onMounted } from "vue";
 
 export default {
@@ -51,7 +51,7 @@ export default {
     };
   },
   components: {
-    VideoDecode, ImgDecode
+    VideoParser, ImgParser
   },
 };
 </script>

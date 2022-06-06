@@ -40,7 +40,7 @@ export default {
       if (pReader.value) {
         (await pReader.value).destroyContext();
         (await pParser.value).destroyContext();
-        console.log('ImgDecode Component Unmount');
+        console.log('ImgParser Component Unmount');
       }
     })
 

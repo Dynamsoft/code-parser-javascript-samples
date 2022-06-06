@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { BarcodeReader, EnumBarcodeFormat } from "dynamsoft-javascript-barcode";
 import { CodeParser, EnumCodeFormat } from 'shen-dynamsoft-code-parser';
-import './ImgDecode.css'
+import './ImgParser.css'
 
 export default class ImgDecode extends Component {
   constructor(props) {
@@ -39,7 +39,7 @@ export default class ImgDecode extends Component {
     if (this.pReader) {
       (await this.pReader).destroyContext();
       (await this.pParser).destroyContext();
-      console.log('ImgDecode Component Unmount');
+      console.log('ImgParser Component Unmount');
     }
   }
 
