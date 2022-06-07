@@ -1,6 +1,6 @@
 # Dynamsoft Code Parser samples for the web
 
-This repository contains multiple samples that demonstrates how to use the [Dynamsoft Code Parser JavaScript Edition](https://www.dynamsoft.com/code-parser/).
+This repository contains multiple samples that demonstrates how to use the [Dynamsoft Code Parser JavaScript Edition](https://www.dynamsoft.com/code-parser/docs/introduction/?ver=latest).
 
 ## Hello World
 
