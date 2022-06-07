@@ -21,7 +21,7 @@
         "@angular/router": "~11.2.5",
         "dynamsoft-javascript-barcode": "9.0.2",
         "rxjs": "~6.6.0",
-        "shen-dynamsoft-code-parser": "0.20220606000338.0",
+        "dynamsoft-code-parser": "1.0.1",
         "tslib": "^2.0.0",
         "zone.js": "~0.11.3"
     },

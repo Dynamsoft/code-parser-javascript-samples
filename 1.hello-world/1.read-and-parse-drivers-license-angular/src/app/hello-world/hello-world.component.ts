@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import '../dbr'; // import side effects. The license, engineResourcePath, so on.
 import '../dcp'
 import { BarcodeScanner } from 'dynamsoft-javascript-barcode';
-import { CodeParser } from 'shen-dynamsoft-code-parser';
+import { CodeParser } from 'dynamsoft-code-parser';
 
 @Component({
   selector: 'app-hello-world',

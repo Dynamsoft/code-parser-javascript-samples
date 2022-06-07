@@ -1,4 +1,4 @@
-import { CodeParser } from 'shen-dynamsoft-code-parser';
+import { CodeParser } from 'dynamsoft-code-parser';
 
 /** LICENSE ALERT - README
  * To use the library, you need to first specify a license key using the API "license" as shown below.
@@ -11,4 +11,4 @@ import { CodeParser } from 'shen-dynamsoft-code-parser';
  * LICENSE ALERT - THE END
  */
 
- CodeParser.engineResourcePath = 'https://cdn.jsdelivr.net/npm/shen-dynamsoft-code-parser@0.20220606000338.0/dist/';
+ CodeParser.engineResourcePath = 'https://cdn.jsdelivr.net/npm/dynamsoft-code-parser@1.0.1/dist/';

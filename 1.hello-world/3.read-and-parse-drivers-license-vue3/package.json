@@ -10,7 +10,7 @@
     "dependencies": {
         "core-js": "^3.6.5",
         "dynamsoft-javascript-barcode": "9.0.2",
-        "shen-dynamsoft-code-parser": "0.20220606000338.0",
+        "dynamsoft-code-parser": "1.0.1",
         "vue": "^3.0.0"
     },
     "devDependencies": {
