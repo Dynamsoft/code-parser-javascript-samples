@@ -11,4 +11,4 @@ import { CodeParser } from 'dynamsoft-code-parser';
  * LICENSE ALERT - THE END
  */
 
- CodeParser.engineResourcePath = 'https://cdn.jsdelivr.net/npm/dynamsoft-code-parser@1.0.1/dist/';
+ CodeParser.engineResourcePath = 'https://cdn.jsdelivr.net/npm/dynamsoft-code-parser@1.0.2/dist/';
