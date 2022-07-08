@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner, EnumBarcodeFormat } from 'dynamsoft-javascript-barcode'
-import { CodeParser, EnumCodeFormat } from 'dynamsoft-code-parser'
+import { CodeParser, EnumCodeFormat } from 'shen-dynamsoft-code-parser'
 @Component({
   selector: 'app-video-parser',
   templateUrl: './video-parser.component.html',
@@ -14,7 +14,10 @@ export class VideoParserComponent implements OnInit {
     try {
       const scanner = await (this.pScanner = BarcodeScanner.createInstance());
       const settings = await scanner.getRuntimeSettings();
-      settings.barcodeFormatIds = EnumBarcodeFormat.BF_PDF417;
+      settings.barcodeFormatIds = 0;
+      settings.barcodeFormatIds_2 = 0;
+      settings.barcodeFormatIds |= EnumBarcodeFormat.BF_PDF417;
+      settings.barcodeFormatIds |= EnumBarcodeFormat.BF_QR_CODE;
       settings.deblurLevel = 7;
       await scanner.updateRuntimeSettings(settings);
       await scanner.setUIElement((document.querySelector('.component-video-parser') as any));

@@ -84,7 +84,7 @@
 <script>
 import { onBeforeUnmount, onMounted, ref } from "vue";
 import { BarcodeScanner, EnumBarcodeFormat } from 'dynamsoft-javascript-barcode';
-import { CodeParser, EnumCodeFormat } from 'dynamsoft-code-parser';
+import { CodeParser, EnumCodeFormat } from 'shen-dynamsoft-code-parser';
 
 export default {
   setup() {
@@ -95,7 +95,10 @@ export default {
       try {
         const scanner = await (pScanner.value = BarcodeScanner.createInstance());
         const settings = await scanner.getRuntimeSettings();
-        settings.barcodeFormatIds = EnumBarcodeFormat.BF_PDF417;
+        settings.barcodeFormatIds = 0;
+        settings.barcodeFormatIds_2 = 0;
+        settings.barcodeFormatIds |= EnumBarcodeFormat.BF_PDF417;
+        settings.barcodeFormatIds |= EnumBarcodeFormat.BF_QR_CODE;
         settings.deblurLevel = 7;
         await scanner.updateRuntimeSettings(settings);
         await scanner.setUIElement(elRefs.value);

@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PDF417 Driver License</title>
-  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-code-parser@1.0.2/dist/dcp.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/shen-dynamsoft-code-parser@0.20220708163942.0/dist/dcp.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@9.0.2/dist/dbr.js"></script>
 </head>
 <body>
@@ -15,7 +15,8 @@
       * DBR
       * To use the library, you need to first specify a license key using the API "license" as shown below.
     */
-    Dynamsoft.DBR.BarcodeReader.license = "DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9";
+    // Dynamsoft.DBR.BarcodeReader.license = "DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9";
+    Dynamsoft.DBR.BarcodeReader.license = "t0068MgAAAHAj08AlvDnydcHJcGK6l7PVDrsXtab/Y95htQV2l4wARVGHk1FG1ZP9SDFUwLvmo0ez18WZYgTLPbLSWwJ1V60=";
     /** 
       * You can visit https://www.dynamsoft.com/customer/license/trialLicense?utm_source=github&product=dbr&package=js to get your own trial license good for 30 days. 
       * Note that if you downloaded this sample from Dynamsoft while logged in, the above license key may already be your own 30-day trial license.
@@ -28,7 +29,7 @@
       * DCP 
       * To use the library, you need to first specify a license key using the API "license" as shown below.
     */
-    Dynamsoft.DCP.CodeParser.license = "t0068lQAAAIkK/J98hFlGuR23+WYADkNElcVBif3GpdrcU/KkcU4eEvYHEopVEHGmxqEF2L+XTTJ/DNFYnrKm5RQlvCXNAX8=";
+    Dynamsoft.DCP.CodeParser.license = "t0068lQAAAKNd+QBe1NZs2uSAhM92occ3jqv0v1XiM7nJzJp1rYvg+0RnAFfX071kepLy4JZXVsyc6qRtu6LZUYojXxNfrhk=";
     /** 
       * You can contact Dynamsoft Support Team (https://www.dynamsoft.com/Company/Contact.aspx) to obtain a license.
       * LICENSE ALERT - THE END 
@@ -39,7 +40,10 @@
         const scanner = await Dynamsoft.DBR.BarcodeScanner.createInstance();
         const settings = await scanner.getRuntimeSettings();
         settings.deblurLevel = 7;
-        settings.barcodeFormatIds = Dynamsoft.DBR.EnumBarcodeFormat.BF_PDF417;
+        settings.barcodeFormatIds = 0;
+        settings.barcodeFormatIds_2 = 0;
+        settings.barcodeFormatIds |= Dynamsoft.DBR.EnumBarcodeFormat.BF_PDF417;
+        settings.barcodeFormatIds |= Dynamsoft.DBR.EnumBarcodeFormat.BF_QR_CODE;
         await scanner.updateRuntimeSettings(settings);
         // Create a DCP instance
         const parser = await Dynamsoft.DCP.CodeParser.createInstance();

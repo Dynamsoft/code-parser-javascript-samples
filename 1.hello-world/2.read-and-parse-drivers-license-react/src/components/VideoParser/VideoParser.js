@@ -1,5 +1,5 @@
 import { BarcodeScanner, EnumBarcodeFormat } from "dynamsoft-javascript-barcode";
-import { CodeParser, EnumCodeFormat } from 'dynamsoft-code-parser';
+import { CodeParser, EnumCodeFormat } from 'shen-dynamsoft-code-parser';
 import React from 'react';
 import './VideoParser.css'
 
@@ -14,7 +14,10 @@ class VideoDecode extends React.Component {
         try {
             const scanner = await (this.pScanner = BarcodeScanner.createInstance());
             const settings = await scanner.getRuntimeSettings();
-            settings.barcodeFormatIds = EnumBarcodeFormat.BF_PDF417;
+            settings.barcodeFormatIds = 0;
+            settings.barcodeFormatIds_2 = 0;
+            settings.barcodeFormatIds |= EnumBarcodeFormat.BF_PDF417;
+            settings.barcodeFormatIds |= EnumBarcodeFormat.BF_QR_CODE;
             settings.deblurLevel = 7;
             await scanner.updateRuntimeSettings(settings);
             await scanner.setUIElement(this.elRef.current);
