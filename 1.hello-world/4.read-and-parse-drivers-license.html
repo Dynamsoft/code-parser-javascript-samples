@@ -5,12 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PDF417 Driver License</title>
-  <script src="https://cdn.jsdelivr.net/npm/shen-dynamsoft-code-parser@0.20220708163942.0/dist/dcp.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/shen-dynamsoft-code-parser@0.20220712174000.0/dist/dcp.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@9.0.2/dist/dbr.js"></script>
 </head>
 <body>
   <div>Loading...</div>
   <script>
+    Dynamsoft.DCP.CodeParser.licenseServer = "https://mtpl.dynamsoft.com";
     /** LICENSE ALERT - README 
       * DBR
       * To use the library, you need to first specify a license key using the API "license" as shown below.
@@ -29,7 +30,7 @@
       * DCP 
       * To use the library, you need to first specify a license key using the API "license" as shown below.
     */
-    Dynamsoft.DCP.CodeParser.license = "t0068lQAAAKNd+QBe1NZs2uSAhM92occ3jqv0v1XiM7nJzJp1rYvg+0RnAFfX071kepLy4JZXVsyc6qRtu6LZUYojXxNfrhk=";
+    Dynamsoft.DCP.CodeParser.license = "DLS2eyJoYW5kc2hha2VDb2RlIjoiMjM0ODEwLVRYbFhaV0pRY205cVgyUmpjQSIsIm9yZ2FuaXphdGlvbklEIjoiMjM0ODEwIn0=";
     /** 
       * You can contact Dynamsoft Support Team (https://www.dynamsoft.com/Company/Contact.aspx) to obtain a license.
       * LICENSE ALERT - THE END 
