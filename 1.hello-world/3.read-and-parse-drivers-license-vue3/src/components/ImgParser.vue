@@ -5,7 +5,7 @@
 <script>
 import { onBeforeUnmount, ref } from "vue";
 import { BarcodeReader, EnumBarcodeFormat } from 'dynamsoft-javascript-barcode';
-import { CodeParser, EnumCodeFormat } from 'shen-dynamsoft-code-parser';
+import { CodeParser, EnumCodeFormat } from 'dynamsoft-code-parser';
 
 export default {
   setup() {

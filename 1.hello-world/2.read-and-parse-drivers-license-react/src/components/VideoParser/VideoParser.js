@@ -1,5 +1,5 @@
 import { BarcodeScanner, EnumBarcodeFormat } from "dynamsoft-javascript-barcode";
-import { CodeParser, EnumCodeFormat } from 'shen-dynamsoft-code-parser';
+import { CodeParser, EnumCodeFormat } from 'dynamsoft-code-parser';
 import React from 'react';
 import './VideoParser.css'
 

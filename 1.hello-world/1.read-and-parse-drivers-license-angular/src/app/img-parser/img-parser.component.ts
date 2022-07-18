@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {BarcodeReader, EnumBarcodeFormat} from 'dynamsoft-javascript-barcode';
-import { CodeParser, EnumCodeFormat } from 'shen-dynamsoft-code-parser';
+import { CodeParser, EnumCodeFormat } from 'dynamsoft-code-parser';
 
 @Component({
   selector: 'app-img-parser',

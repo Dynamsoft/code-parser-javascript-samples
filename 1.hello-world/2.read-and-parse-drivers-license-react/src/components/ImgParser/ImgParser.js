@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { BarcodeReader, EnumBarcodeFormat } from "dynamsoft-javascript-barcode";
-import { CodeParser, EnumCodeFormat } from 'shen-dynamsoft-code-parser';
+import { CodeParser, EnumCodeFormat } from 'dynamsoft-code-parser';
 import './ImgParser.css'
 
 export default class ImgDecode extends Component {

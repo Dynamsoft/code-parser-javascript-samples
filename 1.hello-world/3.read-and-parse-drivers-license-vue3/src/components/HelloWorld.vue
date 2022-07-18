@@ -16,7 +16,7 @@
 import "../dbr"; // import side effects. The license, engineResourcePath, so on.
 import "../dcp"; // import side effects. The license, engineResourcePath, so on.
 import { BarcodeScanner } from 'dynamsoft-javascript-barcode';
-import { CodeParser } from 'shen-dynamsoft-code-parser';
+import { CodeParser } from 'dynamsoft-code-parser';
 import VideoParser from "./VideoParser";
 import ImgParser from './ImgParser'
 import { ref, onMounted } from "vue";
