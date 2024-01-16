@@ -18,11 +18,12 @@
     let parser = null;
     const resultsContainer = document.querySelector("#results");
     (async function () {
-      Dynamsoft.License.LicenseManager.initLicense("DLS2eyJvcmdhbml6YXRpb25JRCI6IjIwMDAwMSJ9");
+      Dynamsoft.License.LicenseManager.initLicense("DLS2eyJoYW5kc2hha2VDb2RlIjoiODAwMC04MDAwIiwibWFpblNlcnZlclVSTCI6Imh0dHBzOi8vMTkyLjE2OC44LjEyMi9kbHMvIiwib3JnYW5pemF0aW9uSUQiOiI4MDAwIiwiY2hlY2tDb2RlIjotMTA1NjUzOTM3M30=");
       await Dynamsoft.DCP.CodeParserModule.loadSpec("MRTD_TD3_PASSPORT");
       parser = await Dynamsoft.DCP.CodeParser.createInstance();
 
       let parsedResultItem = await parser.parse(passportMRZStr);
+      console.log("parsedResultItem: ", parsedResultItem);
       if (!parsedResultItem.exception) {
         let parsedResult = JSON.parse(parsedResultItem.jsonString);
         let parsedLines = parsedResult.ResultInfo;
