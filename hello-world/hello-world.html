@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-core@3.0.30/dist/core.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-license@3.0.20/dist/license.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dynamsoft-code-parser@2.0.20/dist/dcp.js"></script>
+</head>
+
+<body>
+  <div id="results" style="width: 100%; min-height: 10vh; font-size: 3vh; overflow: auto"></div>
+  <script>
+    let passportMRZStr =
+      "P<D<<ADENAUER<<KONRAD<HERMANN<JOSEPH<<<<<<<<1234567897D<<7601059M6704115<<<<<<<<<<<<<<<2";
+
+    let parser = null;
+    const resultsContainer = document.querySelector("#results");
+    (async function () {
+      Dynamsoft.License.LicenseManager.initLicense("DLS2eyJoYW5kc2hha2VDb2RlIjoiODAwMC04MDAwIiwibWFpblNlcnZlclVSTCI6Imh0dHBzOi8vMTkyLjE2OC44LjEyMi9kbHMvIiwib3JnYW5pemF0aW9uSUQiOiI4MDAwIiwiY2hlY2tDb2RlIjotMTA1NjUzOTM3M30=");
+      await Dynamsoft.DCP.CodeParserModule.loadSpec("MRTD_TD3_PASSPORT");
+      parser = await Dynamsoft.DCP.CodeParser.createInstance();
+
+      let parsedResultItem = await parser.parse(passportMRZStr);
+      console.log("parsedResultItem: ", parsedResultItem);
+      if (!parsedResultItem.exception) {
+        let parsedResult = JSON.parse(parsedResultItem.jsonString);
+        let parsedLines = parsedResult.ResultInfo;
+        resultsContainer.innerHTML = "";
+        parsedLines.forEach((element) => {
+          resultsContainer.innerHTML +=
+            "<hr><strong>" + element.FieldName + "</strong><br /><hr>";
+          element.ChildFields[0].forEach((childElement) => {
+            resultsContainer.innerHTML +=
+              "  " +
+              `${childElement.FieldName}: <strong>${childElement.Value}</strong><br />`;
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+
+</html>
