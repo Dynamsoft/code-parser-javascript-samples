@@ -31,9 +31,11 @@
           resultsContainer.innerHTML +=
             "<hr><strong>" + element.FieldName + "</strong><br /><hr>";
           element.ChildFields[0].forEach((childElement) => {
-            resultsContainer.innerHTML +=
-              "  " +
-              `${childElement.FieldName}: <strong>${childElement.Value}</strong><br />`;
+            if (childElement.Value) {
+              resultsContainer.innerHTML +=
+                "  " +
+                `${childElement.FieldName}: <strong>${childElement.Value}</strong><br />`;
+            }
           });
         });
       }
